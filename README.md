@@ -14,10 +14,10 @@ While this works, it only sets the EUID to `0`, but not the RUID. This binary en
 
 ## Compilation  
 
-To compile the binary, use:  
+To compile the binary statically, use:  
 
 ```sh
-gcc set_uid_gid.c -o set_uid_gid
+gcc set_uid_gid.c -o set_uid_gid -static
 ```
 
 ## Usage  
