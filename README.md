@@ -15,9 +15,9 @@
 
 When obtaining RCE as `root`, a common way to obtain an interactive shell is by:
 
-1. Copying `/bin/sh`
-2. Setting the SUID bit
-3. Executing the shell with the `-p` flag
+1. Copying `/bin/sh`.
+2. Setting the SUID bit.
+3. Executing the shell with the `-p` flag.
 
 While this works, it only sets the EUID to 0, but not the RUID. This small utility ensures that both the UID and GID are properly set to `root` before spawning a shell.
 
