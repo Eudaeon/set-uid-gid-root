@@ -1,31 +1,56 @@
-# Set UID and GID to `root`  
+# Set UID and GID to `root`
 
-A simple program to set the UID and GID to `root` and then spawn a shell.  
+<div align="center">
 
-## Rationale  
+[![GitHub stars](https://img.shields.io/github/stars/Eudaeon/runpod-orchestrator?style=for-the-badge)](https://github.com/Eudaeon/runpod-orchestrator/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/Eudaeon/runpod-orchestrator?style=for-the-badge)](https://github.com/Eudaeon/runpod-orchestrator/network)
+[![GitHub issues](https://img.shields.io/github/issues/Eudaeon/runpod-orchestrator?style=for-the-badge)](https://github.com/Eudaeon/runpod-orchestrator/issues)
+[![GitHub license](https://img.shields.io/github/license/Eudaeon/runpod-orchestrator?style=for-the-badge)](LICENSE)
 
-When obtaining RCE as `root`, a common way to escalate privileges to an interactive shell is by:  
+**A small utility to ensure full UID and GID escalation to `root` before spawning a shell.**
 
-1. Copying `/bin/sh`  
-2. Setting the SUID bit  
-3. Executing the shell with the `-p` flag  
+</div>
 
-While this works, it only sets the EUID to `0`, but not the RUID. This binary ensures that both the UID and GID are properly set to `root`.  
+## 📖 Overview
 
-## Compilation  
+When obtaining RCE as `root`, a common way to obtain an interactive shell is by:
 
-To compile the binary statically, use:  
+1. Copying `/bin/sh`
+2. Setting the SUID bit
+3. Executing the shell with the `-p` flag
 
-```sh
+While this works, it only sets the EUID to 0, but not the RUID. This small utility ensures that both the UID and GID are properly set to `root` before spawning a shell.
+
+## 📦 Setup
+
+### Compilation
+
+For maximum portability across different environments, compile the binary statically:
+
+```bash
 gcc set_uid_gid.c -o set_uid_gid -static
 ```
 
-## Usage  
+## 🔧 Usage
 
-After compiling, make `root` set the SUID bit on the generated binary to allow privilege escalation:  
+To enable the privilege escalation, a user with existing `root` access must set the SUID bit on the generated binary:
 
-```sh
-chmod 4777 set_uid_gid
+```bash
+chmod 4777 ./set_uid_gid
 ```
 
-Then, execute the binary to spawn a `root` shell.  
+Then, any user executing the binary will spawn into a shell with full `root` UID and GID:
+
+```bash
+./set_uid_gid
+```
+
+---
+
+<div align="center">
+
+**⭐ Star this repo if you find it helpful!**
+
+Made with ❤️ by [Eudaeon](https://github.com/Eudaeon)
+
+</div>
