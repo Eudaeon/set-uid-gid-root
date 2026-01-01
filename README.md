@@ -2,10 +2,10 @@
 
 <div align="center">
 
-[![GitHub stars](https://img.shields.io/github/stars/Eudaeon/runpod-orchestrator?style=for-the-badge)](https://github.com/Eudaeon/runpod-orchestrator/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/Eudaeon/runpod-orchestrator?style=for-the-badge)](https://github.com/Eudaeon/runpod-orchestrator/network)
-[![GitHub issues](https://img.shields.io/github/issues/Eudaeon/runpod-orchestrator?style=for-the-badge)](https://github.com/Eudaeon/runpod-orchestrator/issues)
-[![GitHub license](https://img.shields.io/github/license/Eudaeon/runpod-orchestrator?style=for-the-badge)](LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/Eudaeon/set-uid-gid-root?style=for-the-badge)](https://github.com/Eudaeon/set-uid-gid-root/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/Eudaeon/set-uid-gid-root?style=for-the-badge)](https://github.com/Eudaeon/set-uid-gid-root/network)
+[![GitHub issues](https://img.shields.io/github/issues/Eudaeon/set-uid-gid-root?style=for-the-badge)](https://github.com/Eudaeon/set-uid-gid-root/issues)
+[![GitHub license](https://img.shields.io/github/license/Eudaeon/set-uid-gid-root?style=for-the-badge)](LICENSE)
 
 **A small utility to ensure full UID and GID escalation to `root` before spawning a shell.**
 
